@@ -1,1 +1,23 @@
-<p>customer-item works!</p>
+<div class="item-subs-header">
+  <button (click)="navToList()" class="button-default">Back To the List</button>
+</div>
+<div class="item-subs-body">
+  <div class="item-self">
+    <input class="item-desc" [(ngModel)]="item.Description"  placeholder="Description..."> 
+    <input class="item-desc" [(ngModel)]="item.Type"  placeholder="Type...">
+    <input class="item-desc" [(ngModel)]="item.Amount"  placeholder="Amount...">
+  </div>
+
+</div>
+
+<div class="footer">
+  <div>
+    <button *ngIf="item.Id && !isNewItem()" (click)="delete()" class="button-red">Delete</button>
+  </div>
+  <div *ngIf="item.Id && !isNewItem()">
+    <span>Created on {{item.Date | date}}</span>
+  </div>
+  <div style="text-align: right;">
+    <button (click)="save()" class="button-blue">Save</button>
+  </div>
+</div>

@@ -22,6 +22,13 @@ import { CustomerItemComponent } from './customer-item/customer-item.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot([
+      { path: 'api/v1/customers', component: CustomerListComponent },
+      { path: 'api/v1/customers/new', component: CustomerItemComponent },
+      { path: 'api/v1/customers/:itemId',component: CustomerItemComponent},
+      { path: '', redirectTo: 'api/v1/customers', pathMatch: 'full' },
+      { path: '**', redirectTo: 'api/v1/customers', pathMatch: 'full' }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

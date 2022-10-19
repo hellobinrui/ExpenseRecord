@@ -1,1 +1,16 @@
-<p>customer-list works!</p>
+<div class="title">
+  <span>Customer Record System</span>
+</div>
+<div class="list">
+  <ng-container *ngFor="let item of customerService.displayList ">
+    <div (click)="navToItem(item)" class="item">
+      <span class="item-desc">
+        Description: {{item.Description}}; Amount: {{item.Amount| currency:'CNY'}}
+      </span>
+    </div>
+  </ng-container>
+
+</div>
+<div class="create-item">
+  <button (click)="navToCreateNew()" class="button-blue">Create Record</button>
+</div>

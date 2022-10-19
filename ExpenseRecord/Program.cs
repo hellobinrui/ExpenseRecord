@@ -1,8 +1,12 @@
+using ExpenseRecord.Services;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 var app = builder.Build();
 
