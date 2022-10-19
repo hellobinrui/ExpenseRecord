@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ExpenseRecord"
+  "defaultProject": "ExpenseRecord",
+  "cli": {
+    "analytics": "6573f41e-4158-40e1-8a01-789f8dcc6d71"
+  }
 }
